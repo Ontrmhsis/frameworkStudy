@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pb.ssm.mapper.AuthorMapper">
+
+    <!--开启本mapper下的二级缓冲
+    type指定为ehcachecache类开
+    在ehcache和mybatis的整合包中
+    -->
+<cache />
+    <resultMap id="ForecastMapper" type="Forecast">
+        <id column="cityId" property="cityId"></id>
+        <id column="cityName" property="cityName"></id>
+        <id column="data" property="data"></id>
+        <result column="high" property="high"></result>
+        <result column="fengli" property="fengli"></result>
+        <result column="low" property="low"></result>
+        <result column="fengxiang" property="fengxiang"></result>
+        <result column="type" property="type"></result>
+    </resultMap>
+
+    <select id="findForecastByCityId" parameterType="String" resultMap="ForecastMapper">
+        select * from forecast where cityId=#{cityId}
+    </select>
+
+    <select id="findForecastByCityName" parameterType="String" resultMap="ForecastMapper">
+         select * from forecast where cityName=#{cityName}
+    </select>
+
+    <insert id="addForecastByCityId" parameterType="Forecast">
+        insert into forecast(cityId,cityName,date,high,fengli,low,fengxiang,type)
+            values(#{cityId},#{cityName},#{date},#{high},#{fengli},#{low},#{fengxiang},#{type})
+    </insert>
+
+
+
+</mapper>

@@ -1,0 +1,4 @@
+server:
+  port: 8080
+  maxHttpHeaderSize: 10240
+  URIEncoding: UTF-8

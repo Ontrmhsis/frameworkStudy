@@ -2,13 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.pb.ssm.mapper.AuthorMapper">
+<mapper namespace="com.example.weatherdemo2.mapper.ForecastMapper">
 
-    <!--开启本mapper下的二级缓冲
-    type指定为ehcachecache类开
-    在ehcache和mybatis的整合包中
-    -->
-<cache />
     <resultMap id="ForecastMapper" type="Forecast">
         <id column="cityId" property="cityId"></id>
         <id column="cityName" property="cityName"></id>

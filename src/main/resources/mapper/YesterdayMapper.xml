@@ -2,24 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.pb.ssm.mapper.AuthorMapper">
+<mapper namespace="com.example.weatherdemo2.mapper.YesterdayMapper">
+    
+    <select id="findAll" resultType="com.example.weatherdemo2.pojo.Yesterday">
+        select * from yesterday ;
+    </select>
 
-    <!--开启本mapper下的二级缓冲
-    type指定为ehcachecache类开
-    在ehcache和mybatis的整合包中
-    -->
+    <select id="findYesterdayByCityId" resultType="com.example.weatherdemo2.pojo.Yesterday">
+        select * from yesterday where cityId=#{cityId};
+    </select>
 
-    <cache />
-    <resultMap id="yesterdayResultMap" type="Yesterday">
-        <id column="cityId" property="cityId"></id>
-        <id column="cityName" property="cityName"></id>
-        <id column="data" property="data"></id>
-        <result column="high" property="high"></result>
-        <result column="fl" property="fl"></result>
-        <result column="low" property="low"></result>
-        <result column="fx" property="fx"></result>
-        <result column="type" property="type"></result>
-    </resultMap>
-
+    <select id="findYesterdayByCityName" resultType="com.example.weatherdemo2.pojo.Yesterday">
+        select * from yesterday where cityName=#{cityName};
+    </select>
 
 </mapper>

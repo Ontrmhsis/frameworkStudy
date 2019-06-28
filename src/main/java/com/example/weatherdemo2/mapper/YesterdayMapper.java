@@ -2,21 +2,26 @@ package com.example.weatherdemo2.mapper;
 
 import com.example.weatherdemo2.pojo.Yesterday;
 
+import java.util.List;
+
 public interface YesterdayMapper {
-    public Yesterday findYesterdayByCityId(String cityId);
 
-    public Yesterday findYesterdayByCityName(String cityName);
+    List<Yesterday> findAll();
 
-    public int addYesterdayByCityId(String cityId);
+    List<Yesterday> findYesterdayByCityId(String cityId);
 
-    public int addYesterdayByCityName(String cityName);
+    List<Yesterday> findYesterdayByCityName(String cityName);
 
-    public int updateYesterdayByCityId(String cityId);
+    int addYesterdayByCityId(String cityId);
 
-    public int updateYesterdayByCityName(String cityName);
+    int addYesterdayByCityName(String cityName);
 
-    public int deleteYesterdayByCityId(String cityId);
+    int updateYesterdayByCityId(String cityId);
 
-    public int deleteYesterdayByCityName(String cityName);
+    int updateYesterdayByCityName(String cityName);
+
+    int deleteYesterdayByCityId(String cityId);
+
+    int deleteYesterdayByCityName(String cityName);
 
 }

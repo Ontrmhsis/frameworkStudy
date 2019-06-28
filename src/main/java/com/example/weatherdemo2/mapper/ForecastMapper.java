@@ -4,6 +4,8 @@ import com.example.weatherdemo2.pojo.Forecast;
 
 public interface ForecastMapper {
 
+    public Forecast findAll();
+
     public Forecast findForecastByCityId(String cityId);
 
     public Forecast findForecastByCityName(String cityName);

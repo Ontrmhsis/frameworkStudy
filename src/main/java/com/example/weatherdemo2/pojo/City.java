@@ -1,6 +1,7 @@
 package com.example.weatherdemo2.pojo;
 
 public class City {
+
     private String cityId;
     private String cityName;
 

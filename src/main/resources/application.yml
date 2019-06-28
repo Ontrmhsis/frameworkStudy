@@ -2,3 +2,10 @@ server:
   port: 8080
   maxHttpHeaderSize: 10240
   URIEncoding: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/weather?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: weitao2998
+    driver-class-name: com.mysql.jdbc.Driver

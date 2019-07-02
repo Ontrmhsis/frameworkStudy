@@ -1,7 +1,6 @@
 package com.example.weatherdemo2.pojo;
 
 public class Forecast {
-    private String cityId;
     private String cityName;
     private String date;
     private String high;
@@ -9,14 +8,6 @@ public class Forecast {
     private String low;
     private String fengxiang;
     private String type;
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
 
     public String getCityName() {
         return cityName;
@@ -77,8 +68,7 @@ public class Forecast {
     @Override
     public String toString() {
         return "Forecast{" +
-                "cityId='" + cityId + '\'' +
-                ", cityName='" + cityName + '\'' +
+                "cityName='" + cityName + '\'' +
                 ", date='" + date + '\'' +
                 ", high='" + high + '\'' +
                 ", fengli='" + fengli + '\'' +

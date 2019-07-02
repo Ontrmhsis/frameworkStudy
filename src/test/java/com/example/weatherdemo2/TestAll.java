@@ -1,23 +1,32 @@
 package com.example.weatherdemo2;
 
-import com.example.weatherdemo2.mapper.CityMapper;
 import com.example.weatherdemo2.mapper.YesterdayMapper;
-import com.example.weatherdemo2.pojo.City;
+import com.example.weatherdemo2.pojo.WeatherResponse;
 import com.example.weatherdemo2.pojo.Yesterday;
+import com.example.weatherdemo2.service.WeatherDataService;
+import com.example.weatherdemo2.service.WeatherDataServiceImpl;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
-public class TestYesterday{
+/**
+ * Author: ChenWeiTao
+ * Date: 19/07/01
+ */
+public class TestAll {
 
+    @Autowired
+    WeatherDataService weatherDataService;
     @Test
-    public void testFindAll() throws IOException {
+    public void TestAll() throws IOException {
+
+
         //读取配置文件
         InputStream in= Resources.getResourceAsStream("SqlMapConfig.xml");
         //获取sqlsessionfactory
@@ -25,11 +34,8 @@ public class TestYesterday{
         //获取session对象
         SqlSession sqlSession = factory.openSession();
         //获取mapper代理对象
-        YesterdayMapper usermapper =sqlSession.getMapper(YesterdayMapper.class);
-        //执行findAll
-        List<Yesterday> yesterdays=usermapper.findYesterdayByCityId("101250101");
-        for(Yesterday yesterday:yesterdays){
-            System.out.println(yesterday);
-        }
+        YesterdayMapper usermapper = sqlSession.getMapper(YesterdayMapper.class);
+
+
     }
 }

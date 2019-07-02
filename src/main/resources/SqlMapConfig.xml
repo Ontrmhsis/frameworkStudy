@@ -12,9 +12,9 @@
             <!--配置连接池-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"></property>
-                <property name="url" value="jdbc:mysql://localhost:3306/weather?characterEncoding=utf-8"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/weatherinfo?characterEncoding=utf-8"></property>
                 <property name="username" value="root"></property>
-                <property name="password" value="weitao2998"></property>
+                <property name="password" value="12345678"></property>
             </dataSource>
 
         </environment>
@@ -22,7 +22,7 @@
     <!--映射文件配置-->
     <mappers>
         <mapper resource="mapper/CityMapper.xml" ></mapper>
-<!--        <mapper resource="mapper/ForecastMapper.xml"></mapper>-->
+        <mapper resource="mapper/ForecastMapper.xml"></mapper>
         <mapper resource="mapper/YesterdayMapper.xml"></mapper>
     </mappers>
 </configuration>

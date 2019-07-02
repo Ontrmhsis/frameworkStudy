@@ -22,7 +22,7 @@ public class Weatherdemo2ApplicationTests {
     @Test
     public void testFindAll() throws IOException {
         //读取配置文件
-        InputStream in = Resources.getResourceAsStream("configuration.xml");
+        InputStream in = Resources.getResourceAsStream("sqlMapConfig.xml");
         //获取sqlsessionfactory
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         //获取session对象

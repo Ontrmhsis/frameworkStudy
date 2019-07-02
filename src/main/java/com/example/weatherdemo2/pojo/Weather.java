@@ -5,7 +5,6 @@ import java.util.List;
 public class Weather  {
     private String city;
     private Yesterday yesterday;
-    //private String aqi;
     private String ganmao;
     private String wendu;
     private List<Forecast> forecast;
@@ -26,18 +25,10 @@ public class Weather  {
         this.yesterday = yesterday;
     }
 
-//    public String getAqi() {
-//        return aqi;
-//    }
-//
-//    public void setAqi(String aqi) {
-//        this.aqi = aqi;
-//    }
-
     public String getGanmao() {
         return ganmao;
     }
-
+    
     public void setGanmao(String ganmao) {
         this.ganmao = ganmao;
     }

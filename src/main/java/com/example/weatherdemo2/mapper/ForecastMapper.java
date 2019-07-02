@@ -2,23 +2,17 @@ package com.example.weatherdemo2.mapper;
 
 import com.example.weatherdemo2.pojo.Forecast;
 
+import java.util.List;
+
 public interface ForecastMapper {
 
-    public Forecast findAll();
+    List<Forecast> findAll();
 
-    public Forecast findForecastByCityId(String cityId);
+    List<Forecast> findForecastByCityName(String cityName);
 
-    public Forecast findForecastByCityName(String cityName);
+    int addForecastByCityName(Forecast forecast);
 
-    public int addForecastByCityId(String cityId);
+    int updateForecastByCityName(Forecast forecast);
 
-    public int addForecastByCityName(String cityName);
-
-    public int updateForecastByCityId(String cityId);
-
-    public int updateForecastByCityName(String cityName);
-
-    public int deleteForecastByCityId(String cityId);
-
-    public int deleteForecastByCityName(String cityName);
+    int deleteForecastByCityName(String cityName);
 }

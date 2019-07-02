@@ -16,6 +16,8 @@ public class TestCity {
 
     @Test
     public void testFindAll() throws IOException {
+
+
         //读取配置文件
         InputStream in= Resources.getResourceAsStream("SqlMapConfig.xml");
         //获取sqlsessionfactory
@@ -37,5 +39,7 @@ public class TestCity {
         for(City city:citys3){
             System.out.println(city);
         }
+        sqlSession.close();
+        in.close();
     }
 }

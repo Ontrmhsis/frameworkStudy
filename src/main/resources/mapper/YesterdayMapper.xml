@@ -8,12 +8,23 @@
         select * from yesterday ;
     </select>
 
-    <select id="findYesterdayByCityId" resultType="com.example.weatherdemo2.pojo.Yesterday">
-        select * from yesterday where cityId=#{cityId};
-    </select>
-
     <select id="findYesterdayByCityName" resultType="com.example.weatherdemo2.pojo.Yesterday">
-        select * from yesterday where cityName=#{cityName};
+        select * from yesterday
+            where cityName=#{cityName};
     </select>
 
+    <insert id="addYesterdayByCityName" parameterType="com.example.weatherdemo2.pojo.Yesterday">
+        insert into yesterday(cityName,date,high,fx,low,fl,type)
+            values(#{cityName},#{date},#{high},#{fx},#{low},#{fl},#{type});
+    </insert>
+
+    <update id="updateYesterdayByCityName" parameterType="com.example.weatherdemo2.pojo.Yesterday">
+        update yesterday
+            set cityName=#{cityName},date=#{date},high=#{high},fx=#{fx},low=#{low},fl=#{fl},type=#{type} ;
+    </update>
+
+    <delete id="deleteYesterdayByCityName" parameterType="String">
+        delete from yesterday
+            where cityName=#{cityName};
+    </delete>
 </mapper>

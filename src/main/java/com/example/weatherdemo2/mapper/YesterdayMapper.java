@@ -8,19 +8,11 @@ public interface YesterdayMapper {
 
     List<Yesterday> findAll();
 
-    List<Yesterday> findYesterdayByCityId(String cityId);
-
     List<Yesterday> findYesterdayByCityName(String cityName);
 
-    int addYesterdayByCityId(String cityId);
+    int addYesterdayByCityName(Yesterday yesterday);
 
-    int addYesterdayByCityName(String cityName);
-
-    int updateYesterdayByCityId(String cityId);
-
-    int updateYesterdayByCityName(String cityName);
-
-    int deleteYesterdayByCityId(String cityId);
+    int updateYesterdayByCityName(Yesterday yesterday);
 
     int deleteYesterdayByCityName(String cityName);
 
